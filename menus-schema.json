@@ -1,0 +1,20 @@
+{
+    "name":"Menu",
+    "namespace":"App",
+    "complete_name":"App\\Menu",
+    "table":{
+        "name":"menus",
+        "colums":[
+                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"bar_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"precio", "type":"Decimal", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"disponible", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"descripcion", "type":"Text", "length":"65535", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+            ]
+}
