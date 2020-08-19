@@ -4,7 +4,7 @@
     <div class="card">
 
         <div class="card-header">
-            <h3>Crear Buzon </h3>
+            <h1> Buzon Create </h1>
         </div>
         <div class="card-body">
 
@@ -33,8 +33,8 @@
             @endif
         </div>
                                                                         <div>
-            <button class="btn btn-success" type="submit">Grabar</button>
-            <a href="{{route('buzons.index')}}" class="btn btn-primary">Regresar</a>
+            <button class="btn btn-primary" type="submit">Create</button>
+            <a href="{{ url()->previous() }}">Back</a>
         </div>
         </form>
         </div>

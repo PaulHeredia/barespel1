@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('sites', 'API\SiteController');
 Route::apiResource('bars', 'API\BarController');
 Route::apiResource('buzons', 'API\BuzonController');
 Route::apiResource('menus', 'API\MenuController');
 Route::apiResource('preferencias', 'API\PreferenciaController');
+Route::apiResource('sites', 'API\SiteController');
 Route::apiResource('snacks', 'API\SnackController');

@@ -35,7 +35,7 @@ class BarController extends Controller
     {
         $data = $request->validated();
         $bar = Bar::create($data);
-        return redirect()->route('bars.index')->with('status', 'Registro Creado Exitosamente...!');
+        return redirect()->route('bars.index')->with('status', 'Bar created!');
     }
 
     public function edit(Request $request, Bar $bar)
@@ -48,12 +48,12 @@ class BarController extends Controller
         $data = $request->validated();
         $bar->fill($data);
         $bar->save();
-        return redirect()->route('bars.index')->with('status', 'Registro Actualizado Exitosamente...!');
+        return redirect()->route('bars.index')->with('status', 'Bar updated!');
     }
 
     public function destroy(Request $request, Bar $bar)
     {
         $bar->delete();
-        return redirect()->route('bars.index')->with('status', 'Registro Eliminado Exitosamente...!');
+        return redirect()->route('bars.index')->with('status', 'Bar destroyed!');
     }
 }

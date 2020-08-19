@@ -35,7 +35,7 @@ class MenuController extends Controller
     {
         $data = $request->validated();
         $menu = Menu::create($data);
-        return redirect()->route('menus.index')->with('status', 'Registro Creado Exitosamente...!');
+        return redirect()->route('menus.index')->with('status', 'Menu created!');
     }
 
     public function edit(Request $request, Menu $menu)
@@ -48,12 +48,12 @@ class MenuController extends Controller
         $data = $request->validated();
         $menu->fill($data);
         $menu->save();
-        return redirect()->route('menus.index')->with('status', 'Registro Actualizado Exitosamente...!');
+        return redirect()->route('menus.index')->with('status', 'Menu updated!');
     }
 
     public function destroy(Request $request, Menu $menu)
     {
         $menu->delete();
-        return redirect()->route('menus.index')->with('status', 'Registro Eliminado Exitosamente...!');
+        return redirect()->route('menus.index')->with('status', 'Menu destroyed!');
     }
 }

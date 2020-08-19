@@ -1,0 +1,38 @@
+{
+    "name":"Preferencia",
+    "namespace":"App",
+    "complete_name":"App\\Preferencia",
+    "table":{
+        "name":"preferencias",
+        "colums":[
+                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"menu_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"fecha", "type":"Date", "length":"0", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"observacion", "type":"Text", "length":"65535", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"menu",
+            "type":"BelongsTo",
+            "local_key" : "menu_id",
+            "foreign_key": "id",
+            "model": {
+                "name":"Menu",
+                "table":{
+                    "name":"menus",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"menu_id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"fecha", "type":"Date", "length":"0", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"observacion", "type":"Text", "length":"65535", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

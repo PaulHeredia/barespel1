@@ -35,7 +35,7 @@ class SiteController extends Controller
     {
         $data = $request->validated();
         $site = Site::create($data);
-        return redirect()->route('sites.index')->with('status', 'Registro Creado Exitosamente...!');
+        return redirect()->route('sites.index')->with('status', 'Site created!');
     }
 
     public function edit(Request $request, Site $site)
@@ -48,12 +48,12 @@ class SiteController extends Controller
         $data = $request->validated();
         $site->fill($data);
         $site->save();
-        return redirect()->route('sites.index')->with('status', 'Registro Actualizado Exitosamente...!');
+        return redirect()->route('sites.index')->with('status', 'Site updated!');
     }
 
     public function destroy(Request $request, Site $site)
     {
         $site->delete();
-        return redirect()->route('sites.index')->with('status', 'Registro Eliminado Exitosamente...!');
+        return redirect()->route('sites.index')->with('status', 'Site destroyed!');
     }
 }

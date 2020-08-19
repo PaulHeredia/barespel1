@@ -1,0 +1,80 @@
+{
+    "name":"Bar",
+    "namespace":"App",
+    "complete_name":"App\\Bar",
+    "table":{
+        "name":"bars",
+        "colums":[
+                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"site_id", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"abierto", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"site",
+            "type":"BelongsTo",
+            "local_key" : "site_id",
+            "foreign_key": "id",
+            "model": {
+                "name":"Site",
+                "table":{
+                    "name":"sites",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"site_id", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"abierto", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        } ,
+                
+                {
+            "name":"menu",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "bar_id",
+            "model": {
+                "name":"Menu",
+                "table":{
+                    "name":"menus",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"site_id", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"abierto", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        } ,
+                
+                {
+            "name":"snack",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "bar_id",
+            "model": {
+                "name":"Snack",
+                "table":{
+                    "name":"snacks",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"site_id", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"abierto", "type":"Boolean", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

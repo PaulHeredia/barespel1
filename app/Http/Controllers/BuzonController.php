@@ -35,7 +35,7 @@ class BuzonController extends Controller
     {
         $data = $request->validated();
         $buzon = Buzon::create($data);
-        return redirect()->route('buzons.index')->with('status', 'Registro Creado Exitosamente...!');
+        return redirect()->route('buzons.index')->with('status', 'Buzon created!');
     }
 
     public function edit(Request $request, Buzon $buzon)
@@ -48,12 +48,12 @@ class BuzonController extends Controller
         $data = $request->validated();
         $buzon->fill($data);
         $buzon->save();
-        return redirect()->route('buzons.index')->with('status', 'Registro Actualizado Exitosamente...!');
+        return redirect()->route('buzons.index')->with('status', 'Buzon updated!');
     }
 
     public function destroy(Request $request, Buzon $buzon)
     {
         $buzon->delete();
-        return redirect()->route('buzons.index')->with('status', 'Registro Eliminado Exitosamente...!');
+        return redirect()->route('buzons.index')->with('status', 'Buzon destroyed!');
     }
 }

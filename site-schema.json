@@ -1,0 +1,56 @@
+{
+    "name":"Site",
+    "namespace":"App",
+    "complete_name":"App\\Site",
+    "table":{
+        "name":"sites",
+        "colums":[
+                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"direccion", "type":"String", "length":"100", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"bar",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "site_id",
+            "model": {
+                "name":"Bar",
+                "table":{
+                    "name":"bars",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"direccion", "type":"String", "length":"100", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        } ,
+                
+                {
+            "name":"menu",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "site_id",
+            "model": {
+                "name":"Menu",
+                "table":{
+                    "name":"menus",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"direccion", "type":"String", "length":"100", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

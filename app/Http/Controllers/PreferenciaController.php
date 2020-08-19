@@ -35,7 +35,7 @@ class PreferenciaController extends Controller
     {
         $data = $request->validated();
         $preferencia = Preferencia::create($data);
-        return redirect()->route('preferencias.index')->with('status', 'Registro Creado Exitosamente...!');
+        return redirect()->route('preferencias.index')->with('status', 'Preferencia created!');
     }
 
     public function edit(Request $request, Preferencia $preferencia)
@@ -48,12 +48,12 @@ class PreferenciaController extends Controller
         $data = $request->validated();
         $preferencia->fill($data);
         $preferencia->save();
-        return redirect()->route('preferencias.index')->with('status', 'Registro Actualizado Exitosamente...!');
+        return redirect()->route('preferencias.index')->with('status', 'Preferencia updated!');
     }
 
     public function destroy(Request $request, Preferencia $preferencia)
     {
         $preferencia->delete();
-        return redirect()->route('preferencias.index')->with('status', 'Registro Eliminado Exitosamente...!');
+        return redirect()->route('preferencias.index')->with('status', 'Preferencia destroyed!');
     }
 }

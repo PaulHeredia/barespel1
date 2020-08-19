@@ -4,7 +4,7 @@
     <div class="card">
 
         <div class="card-header">
-            <h3>Crear Snack </h3>
+            <h1> Snack Create </h1>
         </div>
         <div class="card-body">
 
@@ -21,6 +21,15 @@
                 @foreach((\App\Bar::all() ?? [] ) as $bar)
                 <option value="{{$bar->id}}">
                     {{$bar->nombre}}</option>
+                @endforeach
+            </select>
+        </div>
+                                <div class="form-group">
+            <label for="site_id">Site</label>
+            <select class="form-control" name="site_id" id="site_id">
+                @foreach((\App\Site::all() ?? [] ) as $site)
+                <option value="{{$site->id}}">
+                    {{$site->nombre}}</option>
                 @endforeach
             </select>
         </div>
@@ -51,8 +60,8 @@
             @endif
         </div>
                                                                         <div>
-            <button class="btn btn-success" type="submit">Grabar</button>
-            <a href="{{route('snacks.index')}}" class="btn btn-primary">Regresar</a>
+            <button class="btn btn-primary" type="submit">Create</button>
+            <a href="{{ url()->previous() }}">Back</a>
         </div>
         </form>
         </div>

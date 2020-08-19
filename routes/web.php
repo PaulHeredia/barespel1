@@ -21,9 +21,9 @@ Route::get('/','PublicController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('sites', 'SiteController');
 Route::resource('bars', 'BarController');
 Route::resource('buzons', 'BuzonController');
 Route::resource('menus', 'MenuController');
 Route::resource('preferencias', 'PreferenciaController');
+Route::resource('sites', 'SiteController');
 Route::resource('snacks', 'SnackController');

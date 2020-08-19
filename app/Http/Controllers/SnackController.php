@@ -35,7 +35,7 @@ class SnackController extends Controller
     {
         $data = $request->validated();
         $snack = Snack::create($data);
-        return redirect()->route('snacks.index')->with('status', 'Registro Creado Exitosamente...!');
+        return redirect()->route('snacks.index')->with('status', 'Snack created!');
     }
 
     public function edit(Request $request, Snack $snack)
@@ -48,12 +48,12 @@ class SnackController extends Controller
         $data = $request->validated();
         $snack->fill($data);
         $snack->save();
-        return redirect()->route('snacks.index')->with('status', 'Registro Actualizado Exitosamente...!');
+        return redirect()->route('snacks.index')->with('status', 'Snack updated!');
     }
 
     public function destroy(Request $request, Snack $snack)
     {
         $snack->delete();
-        return redirect()->route('snacks.index')->with('status', 'Registro Eliminado Exitosamente...!');
+        return redirect()->route('snacks.index')->with('status', 'Snack destroyed!');
     }
 }

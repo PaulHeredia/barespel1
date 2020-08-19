@@ -7,22 +7,16 @@
         {{ session('status') }}
     </div>
     @endif
-    
     <div class="card">
         <div class="card-header">
-            <div class="row">
-                <div class="col-8">
-                    <h4> CAMPUS </h4>
-                </div>
-                <div class="col-4" style="text-align:right;padding-right:35px"> 
-                    <a href="{{route('sites.create')}}" class="btn btn-success">Nuevo</a>
-                    <a href="http://localhost/barespel1/public" class="btn btn-danger">Salir</a>
-                </div>
-            </div>
-        </>
+            <h1> Sites </h1>
+        </div>
     <div class="card-body">
 
-    <table class="table table-striped table table-dark">
+    <div>
+        <a href="{{route('sites.create')}}">New</a>
+    </div>
+    <table class="table table-striped">
         @if(count($sites))
         <thead>
             <tr>
@@ -43,11 +37,11 @@
             @forelse($sites as $site)
             <tr>
                 <td>
-                    <a href="{{route('sites.show',['site'=>$site] )}}" class="btn btn-info">Ver</a>
-                    <a href="{{route('sites.edit',['site'=>$site] )}}" class="btn btn-primary">Editar</a>
+                    <a href="{{route('sites.show',['site'=>$site] )}}">Show</a>
+                    <a href="{{route('sites.edit',['site'=>$site] )}}">Edit</a>
                     <a href="javascript:void(0)" onclick="event.preventDefault();
-                    document.getElementById('delete-site-{{$site->id}}').submit();" class="btn btn-danger">
-                        Borrar
+                    document.getElementById('delete-site-{{$site->id}}').submit();">
+                        Delete
                     </a>
                     <form id="delete-site-{{$site->id}}" action="{{route('sites.destroy',['site'=>$site])}}" method="POST" style="display: none;">
                         @csrf
@@ -59,7 +53,7 @@
                                                                                                                                 
             </tr>
             @empty
-            <p>No Existen Datos que Mostrar...</p>
+            <p>No Sites</p>
             @endforelse
         </tbody>
     </table>
@@ -69,33 +63,3 @@
 </div>
 
 @endsection
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-----Fondo de Pantalla-->
-<style>
-    body 
-     {
-         background-image: url("https://barmagazine.co.uk/wp-content/uploads/2019/03/Virtual-bar.jpg");
-         background-position: center center;
-         background-repeat: no-repeat;
-         background-attachment: fixed;
-         background-size: cover;
-         align-items: center;
-         height: 100%;
-    }
-  </style>
-</head>
-<body>
-<div class="bg-success">
-<img src="http://moodleltga.espe.edu.ec/moodle/pluginfile.php/1/theme_eguru/logo/1593567274/logo-espe-blanco.png" class="rounded mx-auto d-block" alt="...">
-</div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>   
- 
-</body>
-</html>

@@ -4,7 +4,7 @@
     <div class="card">
 
         <div class="card-header">
-            <h3>Editar Menu </h3>
+            <h1> Menu Edit </h1>
         </div>
         <div class="card-body">
 
@@ -70,8 +70,8 @@
             @endif
         </div>
                                                                         <div>
-            <button class="btn btn-success" type="submit">Grabar</button>
-            <a href="{{route('menus.index')}}" class="btn btn-primary">Regresar</a>
+            <button class="btn btn-primary" type="submit">Save</button>
+            <a href="{{ url()->previous() }}">Back</a>
         </div>
     </form>
     </div>

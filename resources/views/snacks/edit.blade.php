@@ -4,7 +4,7 @@
     <div class="card">
 
         <div class="card-header">
-            <h3>Editar Snack </h3>
+            <h1> Snack Edit </h1>
         </div>
         <div class="card-body">
 
@@ -29,6 +29,19 @@
                     selected="selected"
                     @endif
                 >{{$bar->nombre}}</option>
+
+                @endforeach
+            </select>
+        </div>
+                                <div class="form-group">
+            <label for="site_id">Site</label>
+            <select class="form-control" name="site_id" id="site_id">
+                @foreach((\App\Site::all() ?? [] ) as $site)
+                <option value="{{$site->id}}"
+                    @if($snack->site_id == old('site_id', $site->id))
+                    selected="selected"
+                    @endif
+                >{{$site->nombre}}</option>
 
                 @endforeach
             </select>
@@ -63,8 +76,8 @@
             @endif
         </div>
                                                                         <div>
-            <button class="btn btn-success" type="submit">Grabar</button>
-            <a href="{{route('snacks.index')}}" class="btn btn-primary">Regresar</a>
+            <button class="btn btn-primary" type="submit">Save</button>
+            <a href="{{ url()->previous() }}">Back</a>
         </div>
     </form>
     </div>

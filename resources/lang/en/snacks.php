@@ -14,5 +14,6 @@ return [
     'deleted_at' => 'Deleted At',
 //Relations
     'bar' => 'Bar',
+    'site' => 'Site',
 //Custom
 ];
