@@ -21,9 +21,9 @@ Route::apiResource('bars', 'API\BarController');
 Route::apiResource('buzons', 'API\BuzonController');
 Route::apiResource('menus', 'API\MenuController');
 Route::apiResource('preferencias', 'API\PreferenciaController');
-<<<<<<< HEAD
+ 
 Route::apiResource('sites', 'API\SiteController');
 Route::apiResource('snacks', 'API\SnackController');
-=======
+ 
 Route::apiResource('snacks', 'API\SnackController');
->>>>>>> ariel
+ 
