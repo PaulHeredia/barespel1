@@ -15,10 +15,12 @@ class PreferenciaController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         $preferencias = Preferencia::all();
         return view('preferencias.index', compact('preferencias'));
+        
     }
 
     public function show(Request $request, Preferencia $preferencia)
@@ -26,8 +28,9 @@ class PreferenciaController extends Controller
         return view('preferencias.show', compact('preferencia'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRoles('user');
         return view('preferencias.create');
     }
 

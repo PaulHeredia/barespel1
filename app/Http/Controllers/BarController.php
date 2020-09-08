@@ -15,8 +15,9 @@ class BarController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin','user']);
         $bars = Bar::all();
         return view('bars.index', compact('bars'));
     }
