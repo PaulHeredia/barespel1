@@ -68,29 +68,44 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .dropdown .dropdown-menu{
+opacity: 0;
+transition:         all 400ms ease;
+-moz-transition:    all 400ms ease;
+-webkit-transition: all 400ms ease;
+-o-transition:      all 400ms ease;
+-ms-transition:     all 400ms ease;
+}
+.dropdown:hover .dropdown-menu {
+       display: block;
+       opacity: 1;
+}
         </style>
   
 <div>
 <nav class="navbar navbar-expand-lg navbar-success bg-success">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-    <img src="http://moodleltga.espe.edu.ec/moodle/pluginfile.php/1/theme_eguru/logo/1593567274/logo-espe-blanco.png" class="rounded mx-auto d-block" alt="...">
-    </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-    @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}"class="btn btn-success btn-sm"style="color:white;">Home</a>
-                @else
-                    <a href="{{ route('login') }}"class="btn btn-success btn-sm"style="color:white;">Login</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"class="btn btn-success btn-sm"style="color:white;">Register</a>
-                    @endif
-                @endauth
-                @endif
-    </form>
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <img src="http://moodleltga.espe.edu.ec/moodle/pluginfile.php/1/theme_eguru/logo/1593567274/logo-espe-blanco.png" class="rounded float-left" alt="...">
+                
+            
+    
+            <form class="form-inline my-2 my-lg-0">
+            @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ url('/home') }}"class="btn btn-success btn-sm"style="color:white;">Home</a>
+                        @else
+                            <a href="{{ route('login') }}"class="btn btn-success btn-sm"style="color:white;">Login</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}"class="btn btn-success btn-sm"style="color:white;">Register</a>
+                            @endif
+                        @endauth
+                        @endif
+            </form>
+            </li>
+                </ul>
   </div>
 </nav>
 </div>
@@ -100,11 +115,10 @@
 <body>
 <div class="container">
   <div class="row">
-    <div class="col-sm-2">
-    </div>
-    <div class="col-sm-8 card">
+     
+    <div class="col-sm  card">
     <h2 class="text-center font-weight-bold">MENU</h2>
-     <table class="table table-bordered table-active table-responsive"> 
+    <table class="table table-bordered table-active "> 
     <thead>
                         <tr class="table-warning">                           
                             <td class="text-center font-weight-bold">CAMPUS</td>
@@ -129,7 +143,10 @@
                      </tbody>
   </table>
     </div>
-    <div class="col-sm-2">
+    </div>
+    </div>
+
+    <div class="col-sm ">
      
     </div>
   </div>
@@ -137,7 +154,7 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm ">
      <div class="card">
     <img src="https://image.flaticon.com/icons/png/512/15/15006.png" class="card-img-top" width="5" height="170">
     <div class="card-body">
@@ -148,34 +165,32 @@
   </div>
 </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm ">
     <div class="card">
     <div class="card-body">
     <div class="container">
   <div class="row">
-    <div class="col-sm card">
+   
     <h2 class="text-center font-weight-bold">Snacks</h2>
-     <table class="table table-bordered table-active table-responsive">
-  <thead >
+    <table class="table table-bordered table-active table-responsive"> 
+    <thead>
                         <tr class="table-warning">                           
-                            
-                            <td class="text-center font-weight-bold">CAMPUS</td> 
+                            <td class="text-center font-weight-bold">CAMPUS</td>
                             <td class="text-center font-weight-bold">BAR</td>
                             <td class="text-center font-weight-bold">NOMBRE</td>                            
                             <td class="text-center font-weight-bold">PRECIO</td>
+                            <td class="text-center font-weight-bold">DESCRIPCION</td>
                         </tr>
-
                     </thead>
                     <tbody>
-                    @foreach($snacks as $snack)
+                    @foreach($menus as $menu)
                     <tr>                          
-                         
-                        <td><p class="card-text">{{$snack->bar->site->nombre}} </p></td>
-                        <td><p class="card-text">{{$snack->bar->nombre}}</p></td> 
-                        <td><p class="card-text">{{$snack->nombre}} </p></td>  
-                        <td><p class="card-text">{{$snack->precio}}$</p></td> 
+                         <td><p class="card-text">{{$menu->bar->site->nombre}} </p></td>  
+                         <td><p class="card-text">{{$menu->bar->nombre}} </p></td>  
+                         <td><p class="card-text">{{$menu->nombre}}</p></td>  
+                         <td><p class="card-text">{{$menu->precio}}$</p></td>
+                         <td><p class="card-text">{{$menu->descripcion}}</p></td> 
                          <br>
-                                    
                             
                      </tr>
                      @endforeach
@@ -184,11 +199,11 @@
     </div>
   </div>
 </div>
-<br>
-  </div>
 </div>
-    </div>
-    <div class="col-sm-3">
+</div>
+<br>
+  
+    <div class="col-sm ">
     <div class="card">
     <img src="https://image.flaticon.com/icons/svg/1642/1642121.svg" class="card-img-top" width="10" height="160">
     <div class="card-body">
@@ -202,6 +217,29 @@
   </div>
 </div>
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table class="table table-borderless">
     <thead>
       <tr>
@@ -211,6 +249,8 @@
       </tr>
     </thead>
   </table>
+
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
