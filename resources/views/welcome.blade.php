@@ -69,7 +69,7 @@
                 margin-bottom: 30px;
             }
         </style>
-    
+  
 <div>
 <nav class="navbar navbar-expand-lg navbar-success bg-success">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -28,9 +28,9 @@ class PreferenciaController extends Controller
         return view('preferencias.show', compact('preferencia'));
     }
 
-    public function create(Request $request)
+    public function create( )
     {
-        $request->user()->authorizeRoles('user');
+        
         return view('preferencias.create');
     }
 
