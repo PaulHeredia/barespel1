@@ -208,7 +208,7 @@ transition:         all 400ms ease;
     <img src="https://image.flaticon.com/icons/svg/1642/1642121.svg" class="card-img-top" width="10" height="160">
     <div class="card-body">
     <div class="card text-center">
-            <p>Click aqui para dejar un Preferencia</p>
+            <p>Click aqui pra dejar un Preferencia </p>
             <a href="http://localhost/barespel1/public/preferencias/create" class="btn btn-success"> Ir</a>
         </div>
   </div>
