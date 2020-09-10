@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Reporte;
 use App\Buzon;
 use App\Preferencia;
-class UsuarioReportesController extends Controller
+class ReportesController extends Controller
 {
     //
     public function __construct()
@@ -22,7 +22,7 @@ class UsuarioReportesController extends Controller
     }
     public function reportes(Request $request)
     {
-        $reportes = Reporte::all();
+        $reportes = Reporte::all(); 
         return view('reportes.reportesFin',compact('reportes'));
 
     }

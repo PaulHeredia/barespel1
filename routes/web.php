@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Raiz de nuestro Proyecto
-//Route::get('/', function () {
-    //return view('welcome');
-//});
-Route::get('/','PublicController@index');
+Route::get('/', function () {
+    return view('welcome'); 
+});
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('users', 'UserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -27,6 +30,7 @@ Route::resource('buzons', 'BuzonController');
 Route::resource('menus', 'MenuController');
 Route::resource('preferencias', 'PreferenciaController');
 Route::resource('snacks', 'SnackController');
+
 //Reportes
 Route::get('reportes', 'ReportesController@index')->name('reportes.index');
 Route::get('reportes/reportesFin', 'ReportesController@reportesFin')->name('reportes.reportesFin');

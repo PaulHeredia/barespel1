@@ -16,5 +16,5 @@ class Reporte extends Model
     public function referencias()
     {
     return $this->belongsTo(Referencias::class);
-    }
+    } 
 }

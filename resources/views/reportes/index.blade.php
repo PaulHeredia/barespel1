@@ -21,46 +21,33 @@
         </>
     <div class="card-body">
 
-    <table class="table table-striped table table-dark">
-        @if(count($bars))
-        <thead>
+    <thead>
             <tr>
-                <th>&nbsp;</th>
+            
                                 
-                                
-                                                <td>Nombre</td>
+            <td>Nombre</td>
                 
-                                                <td>Abierto</td>
-                
-                                
-                                
+                <td>Abierto</td>
                                 
                             </tr>
 
         </thead>
-        @endif
+       
         <tbody>
-            @forelse($bars as $bar)
+            
+        @foreach($reportes as $bar)
             <tr>
                 <td>
                     <a href="{{route('bars.show',['bar'=>$bar] )}}" class="btn btn-info">Ver</a>
                     <a href="{{route('bars.edit',['bar'=>$bar] )}}" class="btn btn-primary">Editar</a>
-                    <a href="javascript:void(0)" onclick="event.preventDefault();
-                    document.getElementById('delete-bar-{{$bar->id}}').submit();" class="btn btn-danger">
-                        Borrar
-                    </a>
-                    <form id="delete-bar-{{$bar->id}}" action="{{route('bars.destroy',['bar'=>$bar])}}" method="POST" style="display: none;">
-                        @csrf
-                        @method('DELETE')
-                    </form>
                 </td>
                                                                                                                 <td>{{$bar->nombre}}</td>
                                                                 <td>{{$bar->abierto}}</td>
                                                                                                                                 
             </tr>
-            @empty
-            <p>No Existen Datos que Mostrar...</p>
-            @endforelse
+            @endforeach 
+          
+            
         </tbody>
     </table>
     </div>

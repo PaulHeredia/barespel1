@@ -25,7 +25,7 @@
         @if(count($bars))
         <thead>
             <tr>
-                <th>&nbsp;</th>
+                <th>&nbsp;</th> 
                                 
                                 
                                                 <td>Nombre</td>
