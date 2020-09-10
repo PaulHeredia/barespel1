@@ -45,6 +45,10 @@
                 <td>
                     <a href="{{route('bars.show',['bar'=>$bar] )}}" class="btn btn-info">Ver</a>
                     <a href="{{route('bars.edit',['bar'=>$bar] )}}" class="btn btn-primary">Editar</a>
+                    <a href="javascript:void(0)" onclick="event.preventDefault();
+                    document.getElementById('delete-bar-{{$bar->id}}').submit();" class="btn btn-danger">
+                        Borrar
+                    </a>
                     <form id="delete-bar-{{$bar->id}}" action="{{route('bars.destroy',['bar'=>$bar])}}" method="POST" style="display: none;">
                         @csrf
                         @method('DELETE')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; 
 use App\Reporte;
 use App\Buzon;
 use App\Preferencia;
@@ -19,10 +20,10 @@ class UsuarioReportesController extends Controller
     {
         return view('reportes.index');
     }
-    public function reporte(Request $request)
+    public function reportes(Request $request)
     {
         $reportes = Reporte::all();
-        return view('reportes.userreportes',compact('reportes'));
+        return view('reportes.reportesFin',compact('reportes'));
 
     }
 
