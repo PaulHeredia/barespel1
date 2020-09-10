@@ -27,3 +27,5 @@ Route::resource('buzons', 'BuzonController');
 Route::resource('menus', 'MenuController');
 Route::resource('preferencias', 'PreferenciaController');
 Route::resource('snacks', 'SnackController');
+//Reportes
+Route::get('reportes/reporte', 'ReportesUsuarioController@index')->name('reportes.userreportes');
