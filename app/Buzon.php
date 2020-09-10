@@ -14,4 +14,8 @@ class Buzon extends Model
     return $this->belongsTo(Bar::class);
     }
 
+    public function reporte()
+    {
+    return $this->hasMany(Reporte::class);
+    }
 }

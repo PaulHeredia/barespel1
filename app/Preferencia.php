@@ -13,4 +13,9 @@ class Preferencia extends Model
     {
     return $this->belongsTo(Menu::class);
     }
+
+    public function reporte()
+    {
+    return $this->hasMany(Reporte::class);
+    }
 }
