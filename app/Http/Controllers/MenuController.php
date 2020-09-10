@@ -15,9 +15,12 @@ class MenuController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $menus = Menu::all();
+        $request->user()->authorizeRoles([ 'jefe','admin']);//usuario
+        // $request->user()->authorizeRoles('jefe');//dueño de bar
+         // $request->user()->authorizeRoles('admi');//super admin 
+         $menus = Menu::all();
         return view('menus.index', compact('menus'));
     }
 

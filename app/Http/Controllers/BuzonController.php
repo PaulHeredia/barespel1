@@ -15,8 +15,11 @@ class BuzonController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['user','jefe','admin']);//usuario
+       // $request->user()->authorizeRoles('jefe');//dueño de bar
+        // $request->user()->authorizeRoles('admi');//super admin
         $buzons = Buzon::all();
         return view('buzons.index', compact('buzons'));
     }
@@ -26,8 +29,9 @@ class BuzonController extends Controller
         return view('buzons.show', compact('buzon'));
     }
 
-    public function create()
+    public function create( )
     {
+         
         return view('buzons.create');
     }
 

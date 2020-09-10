@@ -17,8 +17,10 @@ class BarController extends Controller
 
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles(['admin','user']);
-        $bars = Bar::all();
+        $request->user()->authorizeRoles([ 'jefe','admin']);//usuario
+       // $request->user()->authorizeRoles('jefe');//dueño de bar
+        // $request->user()->authorizeRoles('admi');//super admin
+         $bars = Bar::all();
         return view('bars.index', compact('bars'));
     }
 

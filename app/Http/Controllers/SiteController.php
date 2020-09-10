@@ -15,8 +15,9 @@ class SiteController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+         $request->user()->authorizeRoles('admi');//super admin
         $sites = Site::all();
         return view('sites.index', compact('sites'));
     }
