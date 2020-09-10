@@ -54,6 +54,5 @@ class MenuController extends Controller
     public function destroy(Request $request, Menu $menu)
     {
         $menu->delete();
-        return redirect()->route('menus.index')->with('status', 'Registro Eliminado Exitosamente...!');
-    }
+        return redirect()->route('menus.index')->with('status', 'Registro Eliminado Exitosamente...!');    }
 }
