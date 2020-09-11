@@ -37,6 +37,13 @@
     </div>
     @endif
 
+    <div class="container">
+  
+  <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <a class="btn btn-outline-success text-cen" href=" http://localhost/barespel1/public" type="button">Pagina Principal </a>
+    <a class="btn btn-sm btn-outline-secondary" href="http://localhost/barespel1/public/reportes" type="button">Reportes </a>
+    <a class="btn btn-outline-success text-cen" href=" http://localhost/barespel1/public/home" type="button">Atras</a>
     <div class="spinner-border text-primary" role="status">
   <span class="sr-only">Loading...</span>
 </div>
@@ -61,6 +68,10 @@
 <div class="spinner-border text-dark" role="status">
   <span class="sr-only">Loading...</span>
 </div>
+  </form>
+</nav>
+<br>
+<br>
 
 <div class="container">
         <div class="row">

@@ -96,8 +96,8 @@
   
   <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
-    <button class="btn btn-outline-success text-cen" href="http://localhost/barespel1/public/" type="button">Pagina Principal </button>
-    <button class="btn btn-sm btn-outline-secondary" href="http://localhost/barespel1/public/reportes" type="button">Reportes </button>
+    <a class="btn btn-outline-success text-cen" href=" http://localhost/barespel1/public" type="button">Pagina Principal </a>
+    <a class="btn btn-sm btn-outline-secondary" href="http://localhost/barespel1/public/reportes" type="button">Reportes </a>
     <div class="spinner-border text-primary" role="status">
   <span class="sr-only">Loading...</span>
 </div>

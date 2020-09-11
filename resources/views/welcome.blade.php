@@ -166,7 +166,37 @@ transition:         all 400ms ease;
     </div>
     @endif
 
-
+    <div class="container">
+  
+  <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+  <a class="btn btn-sm btn-outline-secondary" href="http://localhost/barespel1/public/home"  type="button">Administracion  </a>
+    <div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-secondary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-info" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-dark" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+  </form>
+</nav>
 
 
 <div class="container">
@@ -275,9 +305,7 @@ transition:         all 400ms ease;
 </div>
     </div>
   </div>
-</div>
-
-
+</div> 
 <div id="clockdate">
   <div class="clockdate-wrapper">
     <div id="clock"></div>

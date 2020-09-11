@@ -61,7 +61,11 @@
                                                                                                                 <td>{{$menu->nombre}}</td>
                                                                 <td>{{$menu->precio}}</td>
                                                                 <td>{{$menu->disponible}}</td>
-                                                                <td>{{$menu->descripcion}}</td>
+                                                                <td> @if($menu->disponible== ('1'))
+                                    SI
+                                    @else NO
+                                    @endif
+                                </td>
                                                                                                                                 
             </tr>
             @empty
