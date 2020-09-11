@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col">
                 
-            <form method="GET"  action="{{route('reportes.preferencias')}}" >
+            <form method="GET"  action="{{route('reportes.listpreferencias')}}" >
                     <div class="form-group">
                         <label for="">Seleccione una Carrera</label>
                         <select class="custom-select" id="bar" name="bar" required>
@@ -18,7 +18,17 @@
                     </div>
                     <button type="submit"    class="btn btn-primary">Procesar  Reporte</button>
             </form>
+            
             </div>
+ 
         </div>
+ 
+
+
+
+
+
+
+
      </div>
 @endsection

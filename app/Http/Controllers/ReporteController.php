@@ -19,14 +19,26 @@ class ReporteController extends Controller
     {
         return view('reportes.index');
     }
-    public function preferencias(Request $request)
+   
+    public function listpreferencias(Request $request)
     {
-         $preferencias=Preferencia::all();
-        $bares= Bar::all()->sortBy('CAR_NOMBRE'); 
-        return view('reportes.preferencias',compact('bares','preferencias'));
+        $buzons=Buzon::all();
+        $preferencias=Preferencia::all();
+        $menus=Preferencia::all();
+        $bares= Bar::all()->sortBy('CAR_NOMBRE');
+        $campues=Site::all(); 
+        return view('reportes.listpreferencias',compact('campues','buzons','menus','bares','preferencias'));
+
+        
     }
+    public function buzon(Request $request)
+    {
+        $buzons=Buzon::all();
+        $preferencias=Preferencia::all();
+        $menus=Preferencia::all();
+        $bares= Bar::all()->sortBy('CAR_NOMBRE');
+        return view('reportes.buzon',compact( 'buzons','menus','bares','preferencias'));
 
-
-    
-
+    }
+  
 }

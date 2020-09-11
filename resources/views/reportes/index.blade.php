@@ -32,38 +32,42 @@
     
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-                <h1 class="text-center  font-weigh  "> Reportes </h1>
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center font-weight-bold  "> Reportes </h1>
             </div>
         </div>
     <div class="card-group">
+        <div class="card">
+                        <a href="http://localhost/barespel1/public/reportes/listpreferencias?bar=3 " > <img  src="https://blog.ida.cl/wp-content/uploads/sites/5/2015/01/iStock_000019046733Small2.jpg" class="card-img-top" alt="..."> </a>
+                    <div class="card-body">
+                    <h5 class="card-title text-center font-weight-bold ">Reportes Preferencias</h5>
+                    <p class="card-text text-justify"> Aqui encontraras el reporte de las preferencias de usuarios para los tres bares</p>
+                     
+                    </div>
+        </div>
         
-
-<div class="card">
+        <div class="card">
+            <a href="http://localhost/barespel1/public/reportes/buzon"> <img src="https://www.ida.cl/wp-content/uploads/sites/5/2016/12/Reportes-de-metricas-para-guiar-las-decisiones-de-un-proyecto-digital.jpg" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+            <h5 class="card-title text-center font-weight-bold">Reportes de Buzon</h5>
+            <p class="card-text text-justify">Aqui encontaras el reporte de los mensaje que dejan los usuarios sobre los bares, menu etc</p>
+            
+            </div>
+        </div>
+                <div class="card">
        
-       <a href="  "> <img src=" https://primeraposicion.mx/wp-content/uploads/2018/03/google-analytics-audience-blogpp-1.jpg" class="card-img-top" alt="..."></a> 
+       <a href=http://localhost/bar1/public/reportes/guias > <img src=" https://escueladelvendedor.info/wp-content/uploads/2018/01/reportes_1516904773-1024x767.png" class="card-img-top" alt="..."></a> 
          <div class="card-body">
-         <h5 class="card-title text-center font-weight-bold"> Reporte De Preferencias de usuarios </h5>
-         <p class="card-text text-justify">  Aqui podras encontrar la lista de materias con los periodos y carreras asignadas</p>
-         
-         </div>
-
-            <div class="card">
-       
-       <a href="  "> <img src=" https://primeraposicion.mx/wp-content/uploads/2018/03/google-analytics-audience-blogpp-1.jpg" class="card-img-top" alt="..."></a> 
-         <div class="card-body">
-         <h5 class="card-title text-center font-weight-bold"> Estadística de Tendencia </h5>
-         <p class="card-text text-justify">  Aqui podras encontrar la lista de materias con los periodos y carreras asignadas</p>
+         <h5 class="card-title text-center font-weight-bold"> Reporte de Snacks</h5>
+         <p class="card-text text-justify">   </p>
          
          </div>
   
-  </div>    
-</div>
-
-    </div>
-</div>
-<div >
+  </div>
+         
+         
+         
 
 </body>
 
