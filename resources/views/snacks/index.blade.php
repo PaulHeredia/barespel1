@@ -53,7 +53,11 @@
                 </td>
                                                                                                                 <td>{{$snack->nombre}}</td>
                                                                 <td>{{$snack->precio}}</td>
-                                                                <td>{{$snack->disponible}}</td>
+                                  <td> @if($snack->disponible== ('1'))
+                                    SI
+                                    @else NO
+                                    @endif
+                                </td>
                                                                                                                                 
             </tr>
             @empty

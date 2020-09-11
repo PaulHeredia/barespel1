@@ -17,9 +17,7 @@
 
     @endif
 
-    <form action="{{route('preferencias.update',['preferencia'=>$preferencia->id])}}" method="POST" novalidate>
-        @csrf
-        @method('PUT')
+    
                         <div class="form-group">
             <label for="menu_id">Menu</label>
             <select class="form-control" name="menu_id" id="menu_id">
@@ -33,9 +31,8 @@
                 @endforeach
             </select>
         </div>
-                
-
-                                                        <div class="form-group">
+        
+            <div class="form-group">
             <label for="fecha">Fecha</label>
                     <input class="form-control Date"  type="date"  name="fecha" id="fecha" value="{{old('fecha',$preferencia->fecha)}}"
                                     required="required"

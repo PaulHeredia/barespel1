@@ -24,6 +24,15 @@
                 @endforeach
             </select>
         </div>
+        <div class="form-group">
+            <label for="menu_id">Bar</label>
+            <select class="form-control" name="bar_id" id="bar_id">
+                @foreach((\App\Bar::all() ?? [] ) as $bar)
+                <option value="{{$menu->id}}">
+                    {{$bar->nombre}}</option>
+                @endforeach
+            </select>
+        </div>
                 
                                                         <div class="form-group">
             <label for="fecha">Fecha</label>

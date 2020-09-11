@@ -50,7 +50,11 @@
                     </form>
                 </td>
                                                                                                                 <td>{{$bar->nombre}}</td>
-                                                                <td>{{$bar->abierto}}</td>
+                                                                                                                <td> @if($bar->abierto== ('1'))
+                                    SI
+                                    @else NO
+                                    @endif
+                                </td>
                                                                                                                                 
             </tr>
             @empty
