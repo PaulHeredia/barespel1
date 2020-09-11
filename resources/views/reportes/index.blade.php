@@ -25,11 +25,42 @@
 <body  >
     
 
+ 
+
 @extends('layouts.app')
 @section('content')
+<div class="container">
 
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
 
-    
+    <div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-secondary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-info" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-dark" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
 
 <div class="container">
         <div class="row">
@@ -67,10 +98,16 @@
   </div>
          
          
+   </div>
          
 
+ 
+
+
+
 </body>
 
-@endsection
-</body>
 </html>
+ 
+</div>
+@endsection

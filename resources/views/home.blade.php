@@ -1,9 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="/lib/jquery-1.12.2.min.js"></script>
+         <script src="/lib/bootstrap.min.js"></script>
         <title>BAR ESPE-L</title>
 
         <!-- Fonts -->
@@ -69,52 +72,60 @@
                 margin-bottom: 30px;
             }
         </style>
-    
-<div>
-<nav class="navbar navbar-expand-lg navbar-success bg-success">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-    <img src="http://moodleltga.espe.edu.ec/moodle/pluginfile.php/1/theme_eguru/logo/1593567274/logo-espe-blanco.png" class="rounded mx-auto d-block" alt="...">
-    </li>
-    <form class="form-inline my-2 my-lg-0">
-    @if (Route::has('login'))
-            <div class="top-right links bg-success">
-                @auth
-                    <a href="{{ url('/home') }}"class="btn btn-success btn-sm"style="color:white;">Home</a>
-                @else
-                    <a href="{{ route('login') }}"class="btn btn-success btn-sm"style="color:white;">Login</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"class="btn btn-success btn-sm"style="color:white;">Register</a>
-                    @endif
-                @endauth
-                @endif
-    </form>
-    </ul>
-  </div>
-</nav>
-</div>
+   
 </head>
 <body>
-@extends('layouts.app')
 
+
+@extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div>
-                <div></div>
 
-                <div>
-                    @if (session('status'))
-                        <div role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <br>
-    <br>
-    <br>
-<div class="container">
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
+
+
+ 
+
+
+
+  <div class="container">
+  
+  <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-success text-cen" href="http://localhost/barespel1/public/" type="button">Pagina Principal </button>
+    <button class="btn btn-sm btn-outline-secondary" href="http://localhost/barespel1/public/reportes" type="button">Reportes </button>
+    <div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-secondary" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-success" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-danger" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-info" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-light" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="spinner-border text-dark" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+  </form>
+</nav>
+
+
     <div class="row">
         <div class="col-sm">
         <a href="http://localhost/barespel1/public" class="btn btn-primary btn-sm">Salir</a>
@@ -190,10 +201,19 @@
         </div>
     </div>
 </div>
-@endsection
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
-
+<table class="table table-borderless">
+    <thead>
+      <tr>
+        <tr>
+          <td class="table-light" colspan="3"><p style="color: black; text-align: center;margin-left: auto;">Copyright ©2020 All rights reserved | This template is made with  by IgniaDragneel</p></td>
+        </tr>
+      </tr>
+    </thead>
+  </table>  
+@endsection

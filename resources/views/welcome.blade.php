@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -148,37 +149,23 @@ transition:         all 400ms ease;
         </style>
   
 <div>
-<nav class="navbar navbar-expand-lg navbar-success bg-success">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <img src="http://moodleltga.espe.edu.ec/moodle/pluginfile.php/1/theme_eguru/logo/1593567274/logo-espe-blanco.png" class="rounded float-left" alt="...">
-                
-            
-    
-            <form class="form-inline my-2 my-lg-0">
-            @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ url('/home') }}"class="btn btn-success btn-sm"style="color:white;">Home</a>
-                        @else
-                            <a href="{{ route('login') }}"class="btn btn-success btn-sm"style="color:white;">Login</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}"class="btn btn-success btn-sm"style="color:white;">Register</a>
-                            @endif
-                        @endauth
-                        @endif
-            </form>
-            </li>
-                </ul>
-  </div>
-</nav>
+ 
 </div>
 <br>
  
 </head>
 
+@extends('layouts.app')
+@section('content')
 <body onload="startTime()">
+<div class="container">
+
+    @if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
+
 
 
 
@@ -289,19 +276,6 @@ transition:         all 400ms ease;
     </div>
   </div>
 </div>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div id="clockdate">
@@ -321,7 +295,7 @@ transition:         all 400ms ease;
     </thead>
   </table>  
 
-
+</div>
 
   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -331,3 +305,4 @@ transition:         all 400ms ease;
     
 </body>
 </html>
+@endsection
